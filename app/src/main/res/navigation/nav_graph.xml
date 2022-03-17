@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <action android:id="@+id/global_action_to_settings_fragment"
+        app:destination="@+id/settingsFragment"/>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.gawel.babyjudas.featureMain.ui.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment"
+            app:popEnterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_mainFragment_to_watchFragment"
+            app:destination="@id/watchFragment"
+            app:popEnterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.gawel.babyjudas.featureBaby.ui.CameraFragment"
+        android:label="Kamera" />
+    <fragment
+        android:id="@+id/watchFragment"
+        android:name="com.gawel.babyjudas.featureParent.ui.WatchFragment"
+        android:label="Podgląd" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.gawel.babyjudas.settings.ui.SettingsFragment"
+        android:label="Ustawienia" />
+</navigation>
